@@ -13,6 +13,8 @@ namespace vars
         public static string structuurInput;
         public static string tabelProceduresInput;
         public static string tabelProceduresOutput;
+        public static int arrayTotaal;
+        public static int arrayTabelStart;
 
 
     }

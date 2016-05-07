@@ -25,12 +25,8 @@ namespace Tools_TblProcs
             this.Close();
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private int checkFiles()
         {
-            Vars.structuurInput = txtbxStructuurInput.Text;
-            Vars.tabelProceduresInput = txtbxTabelProceduresInput.Text;
-            Vars.tabelProceduresOutput = txtbxTabelProcedureOutput.Text;
-
             int iOk = 0;
             if (Vars.structuurInput == "")
             {
@@ -42,6 +38,7 @@ namespace Tools_TblProcs
                 if (File.Exists(Vars.structuurInput) == false)
                 {
                     MessageBox.Show("Structuur-inputfilenaam niet gevonden!");
+                    iOk++;
                 }
             };
             if (Vars.tabelProceduresInput == "")
@@ -54,15 +51,25 @@ namespace Tools_TblProcs
                 if (File.Exists(Vars.tabelProceduresInput) == false)
                 {
                     MessageBox.Show("Procedures-inputfilenaam niet gevonden!");
+                    iOk++;
                 }
             }
             if (Vars.tabelProceduresOutput == "")
             {
                 MessageBox.Show("Structuur-outputfilenaam is niet opgegevens!");
+                iOk++;
             }
-            else { iOk++; };
 
-            if (iOk == 0)
+            return iOk;
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            Vars.structuurInput = txtbxStructuurInput.Text;
+            Vars.tabelProceduresInput = txtbxTabelProceduresInput.Text;
+            Vars.tabelProceduresOutput = txtbxTabelProcedureOutput.Text;
+
+            if (checkFiles() == 0)
             {
                 ttp.toolsTblProcs ttp = new ttp.toolsTblProcs();
                 ttp.voerUit();

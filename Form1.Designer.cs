@@ -52,6 +52,7 @@
             this.txtbxTabelProceduresInput.Name = "txtbxTabelProceduresInput";
             this.txtbxTabelProceduresInput.Size = new System.Drawing.Size(297, 22);
             this.txtbxTabelProceduresInput.TabIndex = 1;
+            this.txtbxTabelProceduresInput.Text = "Files\\\\Recordstructuur.cs";
             this.txtbxTabelProceduresInput.Leave += new System.EventHandler(this.txtbxTabelProceduresInput_Leave);
             // 
             // lblStructuurInput
@@ -107,6 +108,7 @@
             this.txtbxTabelProcedureOutput.Name = "txtbxTabelProcedureOutput";
             this.txtbxTabelProcedureOutput.Size = new System.Drawing.Size(297, 22);
             this.txtbxTabelProcedureOutput.TabIndex = 6;
+            this.txtbxTabelProcedureOutput.Text = "Files\\\\RecordstructuurUit.cs";
             // 
             // frmToolsTblProcs
             // 
@@ -122,6 +124,7 @@
             this.Controls.Add(this.txtbxTabelProceduresInput);
             this.Controls.Add(this.txtbxStructuurInput);
             this.Name = "frmToolsTblProcs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ToolsTblProcs";
             this.ResumeLayout(false);
             this.PerformLayout();
